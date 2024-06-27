@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-
+  
   const [toDos,setTodos]=useState([])
   const [toDo,setTodo]=useState('')
 
@@ -42,7 +42,11 @@ function App() {
             <p>{obj.text}</p>
           </div>
           <div className="right">
-            <i className="fas fa-times"></i>
+            <i 
+            onClick={() => {
+              setTodos(toDos.filter((obj2) => obj2.id !== obj.id));
+            }}
+             className="fas fa-times"></i>
           </div>
         </div>
             )
